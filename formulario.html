@@ -12,17 +12,17 @@
       <div  class="form-group">
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome" class="form-control"
-         placeholder="Digite o seu nome" required>
+         placeholder="Digite o seu nome" required autofocus tabindex="1">
       </div>
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" name="email" id="email" class="form-control"
-         placeholder="seu@email.com" required>
+         placeholder="seu@email.com" required tabindex="2" disabled>
       </div>
       <div class="form-group">
         <label for="data">Nascimento</label>
         <input type="date" name="data" id="data" class="form-control"
-         placeholder="dd/mm/yyyy" min="2016-01-01" max="2016-01-15" required>
+         placeholder="dd/mm/yyyy" min="2016-01-01" max="2016-01-15" required readonly>
       </div>
       <div class="form-group">
         <label>Sexo</label>
@@ -49,7 +49,7 @@
       </div>
       <div class="form-group">
         <label for="ano">Ano Fabricação</label>
-        <input type="number" name="ano" id="ano" class="form-control" min="1920" step="20" max="2016">
+        <input type="number" name="ano" id="ano" class="form-control" min="1920" step="20" max="2016" tabindex="3"> ta
       </div>
       <div class="form-group">
         <label for="cor">Cor</label>
@@ -69,11 +69,47 @@
       </div>
       <div class="form-group">
         <label for="estados">Mensagem</label>
-        <select name="estados" id="estados">
+        <select name="estados" id="estados" multiple size="3">
+          <optgroup label="Sudeste">
           <option value="SP">São Paulo</option>
-          <option value="MG">Rio de Janeiro</option>
+          <option value="MG" select>Rio de Janeiro</option>
           <option value="RJ">Minas Gerais</option>
+        </optgroup>
+        <optgroup label="Sul">
+          <option value="PR">Paraná</option>
+          <option value="SC">Santa Catarina</option>
+          <option value="RS">Rio Grande do Sul</option>
+        </optgroup>
         </select>
+      </div>
+
+      <input type="hidden" name="id" value="1" />
+
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" id="senha" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="mes">Mês</label>
+        <input type="month" name="mes" id="mes" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="semana">Semana</label>
+        <input type="week" name="semana" id="semana" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="time">Hora</label>
+        <input type="time" name="time" id="time" class="form-control" />
+      </div>
+      <div class="form-group">
+        <input type="text" list="navegadores" />
+        <datalist id="navegadores">
+          <option value="Firefox"/>
+          <option value="Internet Explorer"/>
+          <option value="Chrome"/>
+          <option value="Safari"/>
+        </datalist>
+
       </div>
       <div class="form-group">
         <button type="submit" name="button" class="btn btn-primary">Cadastrar</button>
